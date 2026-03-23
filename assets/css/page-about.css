@@ -187,7 +187,7 @@
   .ownership {
     display: block;
     min-height: 620px;
-    background: var(--soil);
+    background: var(--cream);
   }
   .ownership-content {
     max-width: 1200px;
@@ -197,21 +197,21 @@
     flex-direction: column;
     justify-content: center;
   }
-  .ownership .col-label { color: var(--water); }
-  .ownership .col-label::before { background: var(--water); }
+  .ownership .col-label { color: var(--blue-primary); }
+  .ownership .col-label::before { background: var(--blue-primary); }
   .ownership-headline {
     font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 48px);
-    font-weight: 300; line-height: 1.15; color: var(--cream);
+    font-weight: 300; line-height: 1.15; color: var(--soil);
     margin-bottom: 28px; letter-spacing: -0.01em;
   }
   .ownership-body {
     font-size: 17px; font-weight: 300; line-height: 1.75;
-    color: rgba(200,222,255,0.65);
+    color: rgba(4,18,46,0.6);
   }
   .ownership-body--secondary {
     margin-top: 20px;
   }
-  .ownership-body strong { color: var(--sand); font-weight: 600; }
+  .ownership-body strong { color: var(--blue-primary); font-weight: 600; }
   .ownership-principles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -221,21 +221,21 @@
   }
   .ownership-principle {
     padding: 20px;
-    border: 1px solid rgba(200,222,255,0.14);
+    border: 1px solid rgba(7,58,160,0.12);
     border-radius: 4px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.7);
   }
   .ownership-principle-num {
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.12em;
-    color: rgba(200,222,255,0.45);
+    color: rgba(7,58,160,0.45);
     margin-bottom: 10px;
   }
   .ownership-principle p {
     font-size: 14px;
     line-height: 1.65;
-    color: rgba(255,255,255,0.88);
+    color: rgba(4,18,46,0.75);
     margin: 0;
   }
 
