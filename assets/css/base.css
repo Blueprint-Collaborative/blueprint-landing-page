@@ -75,3 +75,4 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .btn-ghost:hover { border-color: var(--soil); color: var(--soil); }
 .btn-primary { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--white); background: var(--blue-primary); border: none; padding: 9px 22px; border-radius: 4px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
 .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
+.page-hero .btn-hero-primary { text-transform: none; letter-spacing: 0.02em; }

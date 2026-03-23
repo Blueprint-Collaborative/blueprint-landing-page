@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Request Access — Blueprint Collaborative</title>
+<link rel="icon" type="image/png" href="/assets/images/blueprint-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Instrument+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/base.css">
@@ -159,11 +160,40 @@
     };
 
     try {
-      await fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify(data)
-      });
-    } catch (err) {}
+      const payload = JSON.stringify(data);
+      let sent = false;
+
+      // sendBeacon is cross-origin safe for fire-and-forget form submissions.
+      if (navigator.sendBeacon) {
+        const blob = new Blob([payload], { type: 'text/plain;charset=UTF-8' });
+        sent = navigator.sendBeacon(SCRIPT_URL, blob);
+        console.info('[Request Access] sendBeacon attempted', { sent: sent });
+      }
+
+      if (!sent) {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: payload,
+          keepalive: true
+        });
+        sent = true;
+        console.info('[Request Access] no-cors fetch sent');
+      }
+
+      if (!sent) {
+        throw new Error('Browser rejected submission transport');
+      }
+    } catch (err) {
+      console.error('[Request Access] Submit failed', err);
+      alert('We could not send your request right now. Please try again in a minute.');
+      submitBtn.textContent = 'Send request';
+      submitBtn.disabled = false;
+      return;
+    }
 
     formWrap.style.opacity = '0';
     formWrap.style.transition = 'opacity 0.3s ease';
