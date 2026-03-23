@@ -350,6 +350,132 @@
   }
   .role-cta:hover { opacity: 1; gap: 10px; }
 
+  /* ── WHO IT'S FOR — BASE ── */
+  .who--b {
+    background: var(--white);
+    padding: 0;
+    position: relative;
+  }
+
+  .who-light-intro {
+    padding: 80px 48px 64px;
+    border-bottom: 1px solid rgba(4,18,46,0.08);
+    text-align: center;
+  }
+
+  .who-light-kicker {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-primary);
+    margin-bottom: 20px;
+  }
+
+  .who-light-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--soil);
+  }
+
+  /* ── OPTION B — STACKED ROWS (light) ── */
+  .wb-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    border-top: 1px solid rgba(4,18,46,0.08);
+  }
+  .wb-row:last-child { border-bottom: 1px solid rgba(4,18,46,0.08); }
+
+  .wb-content {
+    padding: 56px 48px 56px 72px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(4,18,46,0.08);
+  }
+
+  .wb-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--icon-bg, rgba(4,18,46,0.05));
+    border: 1px solid var(--icon-border, rgba(4,18,46,0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+
+  .wb-role {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-primary);
+    margin-bottom: 12px;
+  }
+
+  .wb-title {
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 2vw, 30px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--soil);
+    margin-bottom: 16px;
+  }
+
+  .wb-desc {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(4,18,46,0.55);
+    font-weight: 300;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+
+  .wb-cta {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--blue-primary);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    margin-top: auto;
+  }
+  .wb-cta:hover { opacity: 1; }
+
+  .wb-visual {
+    background: rgba(4,18,46,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(4,18,46,0.2);
+    overflow: hidden;
+  }
+
+  .wb-visual--img {
+    padding: 0;
+    position: relative;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .wb-visual--img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
   /* ── WATERSHED SECTION ── */
   .watershed {
     background: var(--cream);
@@ -974,6 +1100,16 @@
     object-fit: contain;
   }
 
+  img {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .partner-item img.partner-logo--knockout {
+    mix-blend-mode: screen;
+  }
+
   /* ── CTA ── */
   .cta-section {
     background: var(--mist);
@@ -1120,6 +1256,12 @@
     .principles-inner { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     section { padding: 72px 24px; }
+
+    /* Who it's for — tablet */
+    .who-light-intro { padding: 56px 32px 40px; }
+    .wb-row { grid-template-columns: 1fr; min-height: unset; }
+    .wb-content { padding: 40px 32px; border-right: none; border-bottom: 1px solid rgba(4,18,46,0.08); }
+    .wb-visual { min-height: 200px; }
   }
 
   @media (max-width: 640px) {
@@ -1129,4 +1271,9 @@
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     .footer-indigenous { text-align: center; }
+
+    /* Who it's for — mobile */
+    .who-light-intro { padding: 48px 24px 32px; }
+    .wb-content { padding: 32px 24px; }
+    .wb-visual { min-height: 160px; }
   }
