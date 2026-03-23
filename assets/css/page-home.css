@@ -360,14 +360,14 @@
   .who-tabs-inner {
     padding: 0 72px 88px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(620px, 1fr) minmax(320px, 0.82fr);
     gap: 56px;
     align-items: center;
   }
 
   /* ── Left column ── */
   .who-left {
-    min-width: 0;
+    min-width: 620px;
   }
 
   .who-tabs-kicker {
@@ -389,8 +389,9 @@
   }
 
   .who-tabs-nav {
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: 100%;
     gap: 4px;
     background: rgba(4,18,46,0.05);
     border: 1px solid rgba(4,18,46,0.1);
@@ -401,16 +402,21 @@
 
   .who-tab {
     font-family: var(--font-sans);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     color: rgba(4,18,46,0.45);
     background: transparent;
     border: none;
     border-radius: 100px;
-    padding: 8px 18px;
+    padding: 8px 10px;
     cursor: pointer;
     transition: color 0.2s ease, background 0.2s ease;
     white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
   }
 
   .who-tab:hover { color: rgba(4,18,46,0.75); }
@@ -1324,6 +1330,20 @@
     line-height: 1.5;
   }
 
+  @media (max-width: 1320px) {
+    .who-tabs-inner { grid-template-columns: minmax(580px, 1fr) minmax(280px, 0.7fr); }
+    .who-left { min-width: 580px; }
+    .who-panel-img-wrap { height: 520px; }
+    .who-tab { font-size: 13px; padding: 8px 8px; }
+  }
+
+  @media (max-width: 1160px) {
+    .who-tabs-inner { grid-template-columns: minmax(540px, 1fr) minmax(220px, 0.55fr); gap: 40px; }
+    .who-left { min-width: 540px; }
+    .who-panel-img-wrap { height: 460px; }
+    .who-tab { font-size: 12px; padding: 7px 6px; }
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     nav { padding: 0 24px; }
@@ -1345,6 +1365,9 @@
     /* Who tabs — tablet */
     .who-tabs { padding: 60px 0 72px; }
     .who-tabs-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 32px; }
+    .who-left { min-width: 0; }
+    .who-tabs-nav { gap: 3px; padding: 4px; }
+    .who-tab { font-size: 13px; padding: 7px 10px; }
     .who-panel-img-wrap { height: 320px; }
   }
 
@@ -1359,6 +1382,7 @@
     /* Who tabs — mobile */
     .who-tabs { padding: 48px 0 56px; }
     .who-tabs-inner { padding: 0 24px; gap: 32px; }
-    .who-tab { font-size: 13px; padding: 7px 13px; }
+    .who-tabs-nav { gap: 2px; padding: 3px; }
+    .who-tab { font-size: 12px; padding: 6px 8px; }
     .who-panel-img-wrap { height: 260px; }
   }

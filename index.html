@@ -48,11 +48,11 @@
       <h2 class="who-tabs-headline" id="who-headline">Foundations, DAFs &amp; Family Offices</h2>
 
       <div class="who-tabs-nav">
-        <button class="who-tab active" data-tab="0">Capital Stewards</button>
-        <button class="who-tab" data-tab="1">Advisors</button>
-        <button class="who-tab" data-tab="2">Fund Managers</button>
-        <button class="who-tab" data-tab="3">Community Stewards</button>
-        <button class="who-tab" data-tab="4">Ecosystem Builders</button>
+        <button class="who-tab active" data-tab="0" data-long="Capital Stewards" data-short="Capital Stewards">Capital Stewards</button>
+        <button class="who-tab" data-tab="1" data-long="Advisors" data-short="Advisors">Advisors</button>
+        <button class="who-tab" data-tab="2" data-long="Fund Managers" data-short="Funds">Fund Managers</button>
+        <button class="who-tab" data-tab="3" data-long="Community Stewards" data-short="Communities">Community Stewards</button>
+        <button class="who-tab" data-tab="4" data-long="Ecosystem Builders" data-short="Networks">Ecosystem Builders</button>
       </div>
 
       <div class="who-panels">
@@ -425,16 +425,31 @@
     const img      = document.getElementById('who-img');
     const quote    = document.getElementById('who-quote');
     const headline = document.getElementById('who-headline');
+    const compactLabelsMq = window.matchMedia('(max-width: 640px)');
 
     const data = [
       { title: 'Foundations, DAFs & Family Offices',    src: '/assets/images/rock-stacking.png',           alt: 'Stacked river stones representing balance and intentional capital stewardship', quote: 'Blueprint is shared infrastructure for movement finance where aligned funders can see each other, share what they know, and move capital in coordination.' },
-      { title: 'RIAs & Impact Advisors',                src: '/assets/images/advisors-impact-splash.png',  alt: 'Water splash representing impact rippling outward', quote: 'Blueprint handles the heavy lift so you can focus on client strategy.' },
+      { title: 'RIAs & Impact Advisors',                src: '/assets/images/advisors-impact-splash.jpg',  alt: 'Water splash representing impact rippling outward', quote: 'Blueprint handles the heavy lift so you can focus on client strategy.' },
       { title: 'Impact Funds & Movement Finance',       src: '/assets/images/fund-managers-hero-river.png',alt: 'River flowing through a forested canyon, representing steady long-horizon capital flow', quote: 'Blueprint connects movement finance funds with capital stewards already seeking aligned community investments.' },
       { title: 'Nonprofits, Cooperatives & CDFIs',      src: '/assets/images/community-stewards-hero.png', alt: 'Community members gathered around shared tables in a neighborhood street', quote: 'Blueprint is shared infrastructure for community fundraising, helping organizations get visible, define capital needs, and manage fundraising in one place.' },
       { title: 'Networks, Coalitions & Advocacy Orgs',  src: '/assets/images/ecosystem-builders-hero.png', alt: 'Dense rainforest canopy with intertwined roots suggesting living network infrastructure', quote: 'Blueprint is the infrastructure layer for networks that are serious about moving capital, not just connecting people.' },
     ];
 
     let current = 0;
+
+    tabs.forEach((tab) => {
+      const fullLabel = tab.dataset.long || tab.textContent.trim();
+      tab.setAttribute('aria-label', fullLabel);
+    });
+
+    function syncTabLabels() {
+      const useShortLabels = compactLabelsMq.matches;
+      tabs.forEach((tab) => {
+        const longLabel = tab.dataset.long || tab.textContent.trim();
+        const shortLabel = tab.dataset.short || longLabel;
+        tab.textContent = useShortLabels ? shortLabel : longLabel;
+      });
+    }
 
     function switchTab(idx) {
       if (idx === current) return;
@@ -455,6 +470,13 @@
         quote.textContent = data[idx].quote;
         img.classList.remove('is-swapping');
       }, 180);
+    }
+
+    syncTabLabels();
+    if (compactLabelsMq.addEventListener) {
+      compactLabelsMq.addEventListener('change', syncTabLabels);
+    } else {
+      compactLabelsMq.addListener(syncTabLabels);
     }
 
     tabs.forEach((tab, i) => tab.addEventListener('click', () => switchTab(i)));

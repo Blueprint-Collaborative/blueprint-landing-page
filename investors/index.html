@@ -11,19 +11,19 @@
 <link rel="stylesheet" href="/assets/css/page-investors.css">
 
 <style>
-/* ── Hero network graphic (replaces rock-stacking image) ── */
+/* ── Hero image ── */
 .hero-image {
   position: relative;
   overflow: hidden;
-  background: #04122e;
 }
-.hero-image img { display: none; } /* hide old image; SVG takes over */
-.hero-network-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
+.hero-image img {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
 }
 
 /* ── Stat bar below hero CTAs ── */
@@ -86,206 +86,9 @@
 <div id="site-nav"></div>
 
 <!-- HERO -->
-<!-- CHANGE 1: Rock-stacking image replaced with inline SVG network visualization -->
 <div class="page-hero">
   <div class="hero-image">
-    <img src="/assets/images/rock-stacking.png" alt="">
-    <!-- Network coordination graphic — represents capital flowing across aligned funder nodes -->
-    <svg class="hero-network-svg" viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <!-- Background -->
-        <radialGradient id="inv-bg" cx="50%" cy="45%" r="65%">
-          <stop offset="0%" stop-color="#0c2444"/>
-          <stop offset="100%" stop-color="#04122e"/>
-        </radialGradient>
-        <!-- Infrastructure band fill -->
-        <linearGradient id="inv-band-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#0e2648"/>
-          <stop offset="100%" stop-color="#081b3a"/>
-        </linearGradient>
-        <!-- Blur filters -->
-        <filter id="inv-blur-xl" x="-150%" y="-150%" width="400%" height="400%">
-          <feGaussianBlur stdDeviation="22"/>
-        </filter>
-        <filter id="inv-blur-md" x="-100%" y="-100%" width="300%" height="300%">
-          <feGaussianBlur stdDeviation="10"/>
-        </filter>
-        <!-- Motion paths: capital sources → infra top -->
-        <path id="inv-s1" d="M117,125 L117,205"/>
-        <path id="inv-s2" d="M233,112 L233,205"/>
-        <path id="inv-s3" d="M350,102 L350,205"/>
-        <path id="inv-s4" d="M467,112 L467,205"/>
-        <path id="inv-s5" d="M583,125 L583,205"/>
-        <!-- Motion paths: infra bottom → community nodes -->
-        <path id="inv-c1" d="M117,340 L117,437"/>
-        <path id="inv-c2" d="M233,340 L233,435"/>
-        <path id="inv-c3" d="M350,340 L350,429"/>
-        <path id="inv-c4" d="M467,340 L467,435"/>
-        <path id="inv-c5" d="M583,340 L583,437"/>
-        <!-- Motion paths: internal infra node-to-node flows -->
-        <path id="inv-i12" d="M130,262 L218,262"/>
-        <path id="inv-i23" d="M248,262 L330,262"/>
-        <path id="inv-i34" d="M370,262 L452,262"/>
-        <path id="inv-i45" d="M482,262 L570,262"/>
-      </defs>
-
-      <!-- ── Background ── -->
-      <rect width="700" height="560" fill="url(#inv-bg)"/>
-
-      <!-- Ambient glow behind infra band -->
-      <rect x="50" y="185" width="600" height="175" rx="10" fill="#185FA5" fill-opacity="0.07" filter="url(#inv-blur-xl)"/>
-
-      <!-- ── CONNECTION LINES: sources → infrastructure ── -->
-      <line x1="117" y1="125" x2="117" y2="205" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.22" stroke-dasharray="3,5"/>
-      <line x1="233" y1="112" x2="233" y2="205" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.27" stroke-dasharray="3,5"/>
-      <line x1="350" y1="102" x2="350" y2="205" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.36" stroke-dasharray="4,5"/>
-      <line x1="467" y1="112" x2="467" y2="205" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.27" stroke-dasharray="3,5"/>
-      <line x1="583" y1="125" x2="583" y2="205" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.22" stroke-dasharray="3,5"/>
-
-      <!-- ── CONNECTION LINES: infrastructure → communities ── -->
-      <line x1="117" y1="340" x2="117" y2="437" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="3,5"/>
-      <line x1="233" y1="340" x2="233" y2="435" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.22" stroke-dasharray="3,5"/>
-      <line x1="350" y1="340" x2="350" y2="429" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="4,5"/>
-      <line x1="467" y1="340" x2="467" y2="435" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.22" stroke-dasharray="3,5"/>
-      <line x1="583" y1="340" x2="583" y2="437" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="3,5"/>
-
-      <!-- ── INFRASTRUCTURE BAND ── -->
-      <rect x="58" y="205" width="584" height="135" rx="5" fill="url(#inv-band-fill)" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.38"/>
-      <line x1="64" y1="206" x2="636" y2="206" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.55"/>
-      <line x1="64" y1="339" x2="636" y2="339" stroke="#3a8fd4" stroke-width="0.75" stroke-opacity="0.18"/>
-      <text x="350" y="226" text-anchor="middle" font-family="'DM Mono', monospace" font-size="9" letter-spacing="0.2em" fill="#3a8fd4" fill-opacity="0.48">BLUEPRINT SHARED INFRASTRUCTURE</text>
-
-      <!-- ── INTERNAL INFRA CONNECTIONS ── -->
-      <line x1="117" y1="262" x2="583" y2="262" stroke="#3a8fd4" stroke-width="0.75" stroke-opacity="0.15"/>
-      <line x1="130" y1="262" x2="218" y2="262" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.48"/>
-      <line x1="248" y1="262" x2="330" y2="262" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.48"/>
-      <line x1="370" y1="262" x2="452" y2="262" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.48"/>
-      <line x1="482" y1="262" x2="570" y2="262" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.48"/>
-
-      <!-- ── INFRA CAPABILITY NODES ── -->
-      <!-- VISIBILITY -->
-      <circle cx="117" cy="262" r="13" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.62"/>
-      <circle cx="117" cy="262" r="7" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="117" y="290" text-anchor="middle" font-family="'DM Mono', monospace" font-size="7" letter-spacing="0.09em" fill="#3a8fd4" fill-opacity="0.6">VISIBILITY</text>
-      <!-- DILIGENCE -->
-      <circle cx="233" cy="262" r="15" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.65"/>
-      <circle cx="233" cy="262" r="9" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="233" y="292" text-anchor="middle" font-family="'DM Mono', monospace" font-size="7" letter-spacing="0.09em" fill="#3a8fd4" fill-opacity="0.6">DILIGENCE</text>
-      <!-- COORDINATE — center, pulsing -->
-      <circle cx="350" cy="262" r="34" fill="#185FA5" fill-opacity="0.06" filter="url(#inv-blur-md)"/>
-      <circle cx="350" cy="262" r="22" fill="#04122e" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.85">
-        <animate attributeName="stroke-opacity" values="0.85;0.3;0.85" dur="2.4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="350" cy="262" r="14" fill="#0d3060" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.9"/>
-      <circle cx="350" cy="262" r="7" fill="#185FA5"/>
-      <circle cx="350" cy="262" r="3" fill="#3a8fd4"/>
-      <text x="350" y="298" text-anchor="middle" font-family="'DM Mono', monospace" font-size="7" letter-spacing="0.09em" fill="#3a8fd4" fill-opacity="0.75">COORDINATE</text>
-      <!-- REPORTING -->
-      <circle cx="467" cy="262" r="15" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.65"/>
-      <circle cx="467" cy="262" r="9" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="467" y="292" text-anchor="middle" font-family="'DM Mono', monospace" font-size="7" letter-spacing="0.09em" fill="#3a8fd4" fill-opacity="0.6">REPORTING</text>
-      <!-- NETWORK -->
-      <circle cx="583" cy="262" r="13" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.62"/>
-      <circle cx="583" cy="262" r="7" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="583" y="290" text-anchor="middle" font-family="'DM Mono', monospace" font-size="7" letter-spacing="0.09em" fill="#3a8fd4" fill-opacity="0.6">NETWORK</text>
-
-      <!-- ── CAPITAL SOURCE NODES (top tier) ── -->
-      <!-- GRANTS -->
-      <circle cx="117" cy="105" r="20" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.45"/>
-      <circle cx="117" cy="105" r="12" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.6"/>
-      <circle cx="117" cy="105" r="6" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="117" y="140" text-anchor="middle" font-family="'DM Mono', monospace" font-size="8" letter-spacing="0.1em" fill="#3a8fd4" fill-opacity="0.5">GRANTS</text>
-      <!-- DAFs -->
-      <circle cx="233" cy="88" r="24" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.5"/>
-      <circle cx="233" cy="88" r="15" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.65"/>
-      <circle cx="233" cy="88" r="8" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="233" y="127" text-anchor="middle" font-family="'DM Mono', monospace" font-size="8" letter-spacing="0.1em" fill="#3a8fd4" fill-opacity="0.5">DAFs</text>
-      <!-- FOUNDATIONS — largest, center -->
-      <circle cx="350" cy="72" r="30" fill="#04122e" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.55"/>
-      <circle cx="350" cy="72" r="20" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.75"/>
-      <circle cx="350" cy="72" r="11" fill="#185FA5"/>
-      <circle cx="350" cy="72" r="5" fill="#3a8fd4" fill-opacity="0.9"/>
-      <text x="350" y="117" text-anchor="middle" font-family="'DM Mono', monospace" font-size="8" letter-spacing="0.1em" fill="#3a8fd4" fill-opacity="0.6">FOUNDATIONS</text>
-      <!-- PRIs -->
-      <circle cx="467" cy="88" r="24" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.5"/>
-      <circle cx="467" cy="88" r="15" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.65"/>
-      <circle cx="467" cy="88" r="8" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="467" y="127" text-anchor="middle" font-family="'DM Mono', monospace" font-size="8" letter-spacing="0.1em" fill="#3a8fd4" fill-opacity="0.5">PRIs</text>
-      <!-- EQUITY -->
-      <circle cx="583" cy="105" r="20" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.45"/>
-      <circle cx="583" cy="105" r="12" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.6"/>
-      <circle cx="583" cy="105" r="6" fill="#185FA5" fill-opacity="0.85"/>
-      <text x="583" y="140" text-anchor="middle" font-family="'DM Mono', monospace" font-size="8" letter-spacing="0.1em" fill="#3a8fd4" fill-opacity="0.5">EQUITY</text>
-
-      <!-- ── COMMUNITY ORGANIZATION NODES (bottom tier) ── -->
-      <circle cx="117" cy="455" r="18" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.38"/>
-      <circle cx="117" cy="455" r="10" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.5"/>
-      <circle cx="117" cy="455" r="5" fill="#185FA5" fill-opacity="0.7"/>
-      <circle cx="233" cy="455" r="20" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.42"/>
-      <circle cx="233" cy="455" r="12" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.55"/>
-      <circle cx="233" cy="455" r="6" fill="#185FA5" fill-opacity="0.72"/>
-      <circle cx="350" cy="455" r="26" fill="#04122e" stroke="#3a8fd4" stroke-width="1.5" stroke-opacity="0.48"/>
-      <circle cx="350" cy="455" r="16" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.62"/>
-      <circle cx="350" cy="455" r="8" fill="#185FA5" fill-opacity="0.8"/>
-      <circle cx="467" cy="455" r="20" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.42"/>
-      <circle cx="467" cy="455" r="12" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.55"/>
-      <circle cx="467" cy="455" r="6" fill="#185FA5" fill-opacity="0.72"/>
-      <circle cx="583" cy="455" r="18" fill="#04122e" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.38"/>
-      <circle cx="583" cy="455" r="10" fill="#0d2a50" stroke="#3a8fd4" stroke-width="1" stroke-opacity="0.5"/>
-      <circle cx="583" cy="455" r="5" fill="#185FA5" fill-opacity="0.7"/>
-      <text x="350" y="500" text-anchor="middle" font-family="'DM Mono', monospace" font-size="8" letter-spacing="0.14em" fill="#3a8fd4" fill-opacity="0.28">COMMUNITY ORGANIZATIONS</text>
-
-      <!-- ── ANIMATED CAPITAL FLOW PARTICLES ── -->
-      <!-- Sources → infra -->
-      <circle r="2.5" fill="#3a8fd4" fill-opacity="0.85">
-        <animateMotion dur="2.4s" repeatCount="indefinite" begin="0s" calcMode="paced"><mpath href="#inv-s1"/></animateMotion>
-      </circle>
-      <circle r="2" fill="#3a8fd4" fill-opacity="0.8">
-        <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.7s" calcMode="paced"><mpath href="#inv-s2"/></animateMotion>
-      </circle>
-      <circle r="3" fill="#3a8fd4">
-        <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.2s" calcMode="paced"><mpath href="#inv-s3"/></animateMotion>
-      </circle>
-      <circle r="2" fill="#3a8fd4" fill-opacity="0.8">
-        <animateMotion dur="2.6s" repeatCount="indefinite" begin="1.1s" calcMode="paced"><mpath href="#inv-s4"/></animateMotion>
-      </circle>
-      <circle r="2.5" fill="#3a8fd4" fill-opacity="0.85">
-        <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.5s" calcMode="paced"><mpath href="#inv-s5"/></animateMotion>
-      </circle>
-      <!-- Infra → communities -->
-      <circle r="2" fill="#3a8fd4" fill-opacity="0.7">
-        <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.2s" calcMode="paced"><mpath href="#inv-c1"/></animateMotion>
-      </circle>
-      <circle r="2" fill="#3a8fd4" fill-opacity="0.68">
-        <animateMotion dur="2.9s" repeatCount="indefinite" begin="0.4s" calcMode="paced"><mpath href="#inv-c2"/></animateMotion>
-      </circle>
-      <circle r="2.5" fill="#3a8fd4" fill-opacity="0.8">
-        <animateMotion dur="2.3s" repeatCount="indefinite" begin="1.5s" calcMode="paced"><mpath href="#inv-c3"/></animateMotion>
-      </circle>
-      <circle r="2" fill="#3a8fd4" fill-opacity="0.68">
-        <animateMotion dur="2.7s" repeatCount="indefinite" begin="0.9s" calcMode="paced"><mpath href="#inv-c4"/></animateMotion>
-      </circle>
-      <circle r="2" fill="#3a8fd4" fill-opacity="0.7">
-        <animateMotion dur="2.6s" repeatCount="indefinite" begin="1.8s" calcMode="paced"><mpath href="#inv-c5"/></animateMotion>
-      </circle>
-      <!-- Internal infra flows -->
-      <circle r="1.5" fill="#3a8fd4" fill-opacity="0.72">
-        <animateMotion dur="1.1s" repeatCount="indefinite" begin="0s" calcMode="paced"><mpath href="#inv-i12"/></animateMotion>
-      </circle>
-      <circle r="1.5" fill="#3a8fd4" fill-opacity="0.72">
-        <animateMotion dur="0.9s" repeatCount="indefinite" begin="0.28s" calcMode="paced"><mpath href="#inv-i23"/></animateMotion>
-      </circle>
-      <circle r="1.5" fill="#3a8fd4" fill-opacity="0.72">
-        <animateMotion dur="1.0s" repeatCount="indefinite" begin="0.56s" calcMode="paced"><mpath href="#inv-i34"/></animateMotion>
-      </circle>
-      <circle r="1.5" fill="#3a8fd4" fill-opacity="0.72">
-        <animateMotion dur="1.1s" repeatCount="indefinite" begin="0.84s" calcMode="paced"><mpath href="#inv-i45"/></animateMotion>
-      </circle>
-
-      <!-- Depth cross-hairs -->
-      <line x1="0" y1="272" x2="700" y2="272" stroke="white" stroke-opacity="0.015" stroke-width="1"/>
-      <line x1="350" y1="0" x2="350" y2="560" stroke="white" stroke-opacity="0.015" stroke-width="1"/>
-    </svg>
+    <img src="/assets/images/rock-stacking.png" alt="Stacked river stones representing balance and intentional capital stewardship">
   </div>
 
   <div class="hero-content">
