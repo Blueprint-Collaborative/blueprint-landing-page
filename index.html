@@ -39,57 +39,85 @@
 </section>
 
 <!-- WHO IT'S FOR -->
-<section class="who" id="who">
-  <div class="who-intro">
-    <div class="section-label">Who it's for</div>
-    <h2 class="section-title">The new economy needs<br><em>new infrastructure.</em></h2>
-    <p class="section-body" style="margin:0 auto; text-align:center;">
-      Blueprint puts funders, fund managers, and communities in the same room — with the transparency, tools, and shared language to move capital together.
-    </p>
-  </div>
-  <div class="roles-tier">
-    <div class="roles-tier-label">For those<br>moving capital</div>
-    <div class="roles-grid">
-      <div class="role-card">
-        <div class="role-name">Capital Stewards</div>
-        <h3 class="role-title">Foundations, DAFs & Family Offices</h3>
-        <p class="role-desc">See where your capital can go — and who's ready to receive it. Coordinate grants, recoverable grants, loans, and equity in a single integrated view.</p>
-        <a href="/investors/" class="role-cta">Learn more →</a>
+<section class="who-tabs" id="who">
+  <div class="who-tabs-inner">
+
+    <!-- LEFT: kicker, headline, nav, switching content -->
+    <div class="who-left">
+      <div class="who-tabs-kicker">Who it's for</div>
+      <h2 class="who-tabs-headline" id="who-headline">Foundations, DAFs &amp; Family Offices</h2>
+
+      <div class="who-tabs-nav">
+        <button class="who-tab active" data-tab="0">Capital Stewards</button>
+        <button class="who-tab" data-tab="1">Advisors</button>
+        <button class="who-tab" data-tab="2">Fund Managers</button>
+        <button class="who-tab" data-tab="3">Community Stewards</button>
+        <button class="who-tab" data-tab="4">Ecosystem Builders</button>
       </div>
 
-      <div class="role-card">
-        <div class="role-name">Fund Managers</div>
-        <h3 class="role-title">Impact Funds & Movement Finance</h3>
-        <p class="role-desc">Build your pipeline from a living ecosystem of community-defined opportunities. Understand capital needs before they become formal asks.</p>
-        <a href="/fund-managers/" class="role-cta">Learn more →</a>
-      </div>
+      <div class="who-panels">
+        <div class="who-panel active" data-panel="0">
+          <p class="who-panel-desc">See where your capital can go — and who's ready to receive it. Coordinate grants, recoverable grants, loans, and equity in a single integrated view.</p>
+          <ul class="who-panel-bullets">
+            <li>Grants, recoverable grants, loans &amp; equity — coordinated</li>
+            <li>Vetted, community-rooted deal flow</li>
+            <li>Real-time portfolio visibility across capital types</li>
+          </ul>
+          <a href="/investors/" class="who-panel-cta">Learn more →</a>
+        </div>
 
-      <div class="role-card">
-        <div class="role-name">Advisors</div>
-        <h3 class="role-title">RIAs & More</h3>
-        <p class="role-desc">Align your clients' capital with their values. Access a curated pipeline of vetted, community-rooted opportunities across every capital type.</p>
-        <a href="/advisors/" class="role-cta">Learn more →</a>
+        <div class="who-panel" data-panel="1">
+          <p class="who-panel-desc">Align your clients' capital with their values. Access a curated pipeline of vetted, community-rooted opportunities across every capital type.</p>
+          <ul class="who-panel-bullets">
+            <li>Client-ready impact due diligence</li>
+            <li>Curated pipeline across grants, loans &amp; equity</li>
+            <li>Coordinated multi-client capital deployment</li>
+          </ul>
+          <a href="/advisors/" class="who-panel-cta">Learn more →</a>
+        </div>
+
+        <div class="who-panel" data-panel="2">
+          <p class="who-panel-desc">Build your pipeline from a living ecosystem of community-defined opportunities. Get visible to aligned capital before a formal ask is even made.</p>
+          <ul class="who-panel-bullets">
+            <li>Network visibility to foundations, DAFs &amp; advisors</li>
+            <li>LP commitments &amp; investor relations tools</li>
+            <li>Portfolio tracking from sourcing through exit</li>
+          </ul>
+          <a href="/fund-managers/" class="who-panel-cta">Learn more →</a>
+        </div>
+
+        <div class="who-panel" data-panel="3">
+          <p class="who-panel-desc">Be seen on your own terms. Share your vision, capital needs, and your story in a format that helps funders understand what you actually need.</p>
+          <ul class="who-panel-bullets">
+            <li>Define your capital needs in your own language</li>
+            <li>Connect with mission-aligned funders directly</li>
+            <li>Track relationships and capital commitments</li>
+          </ul>
+          <a href="/community-stewards/" class="who-panel-cta">Learn more →</a>
+        </div>
+
+        <div class="who-panel" data-panel="4">
+          <p class="who-panel-desc">Connect the dots between capital and community. Blueprint gives your network shared infrastructure to surface needs, coordinate funding, and amplify collective impact.</p>
+          <ul class="who-panel-bullets">
+            <li>Shared infrastructure across your member network</li>
+            <li>Surface capital needs before they become crises</li>
+            <li>Coordinate multi-funder responses at scale</li>
+          </ul>
+          <a href="/ecosystem-builders/" class="who-panel-cta">Learn more →</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="roles-tier">
-    <div class="roles-tier-label">For those<br>building community</div>
-    <div class="roles-grid roles-grid--two">
-      <div class="role-card">
-        <div class="role-name">Community Stewards</div>
-        <h3 class="role-title">Nonprofits, Cooperatives & CDFIs</h3>
-        <p class="role-desc">Be seen on your own terms. Share your vision, your capital needs, and your story in a format that helps funders understand what you actually need — not what fits their boxes.</p>
-        <a href="/community-stewards/" class="role-cta">Learn more →</a>
-      </div>
-
-      <div class="role-card">
-        <div class="role-name">Ecosystem Builders</div>
-        <h3 class="role-title">Networks, Coalitions & Advocacy Orgs</h3>
-        <p class="role-desc">Connect the dots between capital and community. Blueprint gives your network a shared infrastructure to surface needs, coordinate funding, and amplify collective impact.</p>
-        <a href="/ecosystem-builders/" class="role-cta">Learn more →</a>
+    <!-- RIGHT: single image that swaps on tab change -->
+    <div class="who-right">
+      <div class="who-panel-img-wrap">
+        <img id="who-img" src="/assets/images/rock-stacking.png" alt="Stacked river stones representing balance and intentional capital stewardship">
+        <div class="who-panel-quote">
+          <p id="who-quote">Blueprint is shared infrastructure for movement finance where aligned funders can see each other, share what they know, and move capital in coordination.</p>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -101,6 +129,13 @@
       <div class="partner-item"><img src="/assets/images/fsl-logo.png" alt="Full Spectrum Labs"></div>
       <div class="partner-item"><img src="/assets/images/libra-logo.png" alt="Libra Foundation"></div>
       <div class="partner-item"><img src="/assets/images/psef-logo.png" alt="People's Solar Energy Fund"></div>
+      <div class="partner-item"><img src="/assets/images/tpf-logo.png" alt="The Partnership Fund"></div>
+      <div class="partner-item"><img src="/assets/images/obran-logo.png" alt="Obran"></div>
+      <div class="partner-item"><img src="/assets/images/kinflow-logo.png" alt="Kinflow"></div>
+      <div class="partner-item"><img src="/assets/images/roanhorse-logo.png" alt="Roanhorse Consulting"></div>
+      <div class="partner-item"><img src="/assets/images/just-futures-logo.png" alt="Just Futures"></div>
+      <div class="partner-item"><img class="partner-logo--knockout" src="/assets/images/real-peoples-fund-logo.png" alt="Real People's Fund"></div>
+      <div class="partner-item"><img class="partner-logo--knockout" src="/assets/images/richmond-our-power-coalition-logo.png" alt="Richmond Our Power Coalition"></div>
     </div>
   </div>
 </div>
@@ -383,14 +418,47 @@
 </footer>
 
 <script>
-  // Filter buttons
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+  // ── Who it's for — tab + image switching ──
+  (function () {
+    const tabs   = document.querySelectorAll('.who-tab');
+    const panels = document.querySelectorAll('.who-panel');
+    const img      = document.getElementById('who-img');
+    const quote    = document.getElementById('who-quote');
+    const headline = document.getElementById('who-headline');
+
+    const data = [
+      { title: 'Foundations, DAFs & Family Offices',    src: '/assets/images/rock-stacking.png',           alt: 'Stacked river stones representing balance and intentional capital stewardship', quote: 'Blueprint is shared infrastructure for movement finance where aligned funders can see each other, share what they know, and move capital in coordination.' },
+      { title: 'RIAs & Impact Advisors',                src: '/assets/images/advisors-impact-splash.png',  alt: 'Water splash representing impact rippling outward', quote: 'Blueprint handles the heavy lift so you can focus on client strategy.' },
+      { title: 'Impact Funds & Movement Finance',       src: '/assets/images/fund-managers-hero-river.png',alt: 'River flowing through a forested canyon, representing steady long-horizon capital flow', quote: 'Blueprint connects movement finance funds with capital stewards already seeking aligned community investments.' },
+      { title: 'Nonprofits, Cooperatives & CDFIs',      src: '/assets/images/community-stewards-hero.png', alt: 'Community members gathered around shared tables in a neighborhood street', quote: 'Blueprint is shared infrastructure for community fundraising, helping organizations get visible, define capital needs, and manage fundraising in one place.' },
+      { title: 'Networks, Coalitions & Advocacy Orgs',  src: '/assets/images/ecosystem-builders-hero.png', alt: 'Dense rainforest canopy with intertwined roots suggesting living network infrastructure', quote: 'Blueprint is the infrastructure layer for networks that are serious about moving capital, not just connecting people.' },
+    ];
+
+    let current = 0;
+
+    function switchTab(idx) {
+      if (idx === current) return;
+      tabs[current].classList.remove('active');
+      panels[current].classList.remove('active');
+
+      current = idx;
+      tabs[current].classList.add('active');
+      panels[current].classList.add('active');
+
+      headline.textContent = data[idx].title;
+
+      // Swap image with a quick fade
+      img.classList.add('is-swapping');
+      setTimeout(() => {
+        img.src = data[idx].src;
+        img.alt = data[idx].alt;
+        quote.textContent = data[idx].quote;
+        img.classList.remove('is-swapping');
+      }, 180);
+    }
+
+    tabs.forEach((tab, i) => tab.addEventListener('click', () => switchTab(i)));
+  })();
 
   // Fade in on scroll
   const observer = new IntersectionObserver((entries) => {
