@@ -19,7 +19,6 @@ var NAV_HTML = `<nav>
         <a href="/ecosystem-builders/"><span class="dd-title">Ecosystem Builders</span><span class="dd-sub">Networks, Coalitions &amp; Advocacy Orgs</span></a>
       </div>
     </li>
-    <li>
     <li><a href="/about/">About</a></li>
   </ul>
   <div class="nav-actions">
