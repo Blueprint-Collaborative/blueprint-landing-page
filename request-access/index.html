@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Access — Blueprint Collaborative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Instrument+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/page-request-access.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="request-hero">
+  <div class="request-hero-inner">
+    <div class="request-eyebrow">Request access</div>
+    <h1 class="request-headline">Tell us a bit about<br><em>where you're coming from.</em></h1>
+    <p class="request-sub">We review every request to make sure Blueprint is a good fit. We'll follow up within a few business days.</p>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="form-card">
+
+    <div id="request-form-wrap">
+      <form id="request-form" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="field-name">Full name <span>*</span></label>
+            <input class="form-input" type="text" id="field-name" name="name" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-email">Email <span>*</span></label>
+            <input class="form-input" type="email" id="field-email" name="email" placeholder="you@organization.org" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="field-org">Organization name</label>
+          <input class="form-input" type="text" id="field-org" name="organization" placeholder="Your organization" autocomplete="organization">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="field-type">I want to join as a <span>*</span></label>
+          <select class="form-select" id="field-type" name="org_type" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="Fund Manager">Fund Manager</option>
+            <option value="Advisor">Advisor</option>
+            <option value="Investor or Foundation">Investor or Foundation</option>
+            <option value="Community Steward">Community Steward</option>
+            <option value="Ecosystem Builder">Ecosystem Builder</option>
+          </select>
+        </div>
+
+        <hr class="form-divider">
+
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label" for="field-notes">Anything you'd like us to know</label>
+          <textarea class="form-textarea" id="field-notes" name="notes" placeholder="Tell us about your work, what you're hoping to do on Blueprint, or any questions you have…"></textarea>
+        </div>
+
+        <hr class="form-divider">
+
+        <button type="submit" class="form-submit">Send request</button>
+        <p class="form-note">We typically respond within 2–3 business days.</p>
+
+      </form>
+    </div>
+
+    <div class="form-success" id="form-success">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">Request received.</h2>
+      <p class="success-body">Thanks for reaching out. We'll review your request and be in touch within a few business days.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand"><img src="/assets/images/blueprint-logo.png" alt="Blueprint" height="48" style="display:block;margin-bottom:4px;"></div>
+      <p class="footer-tagline">The operating system for movement finance. Built on community ownership, transparent capital, and the new economy.</p>
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.06em;color:rgba(4,18,46,0.3);">Equimpa Inc. DBA Blueprint Collaborative</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="/investors/">For Capital Stewards</a></li>
+        <li><a href="/fund-managers/">For Fund Managers</a></li>
+        <li><a href="/community-stewards/">For Community Stewards</a></li>
+        <li><a href="/ecosystem-builders/">For Ecosystem Builders</a></li>
+        <li><a href="https://investor.blueprintcollaborative.org/organizations">Log in</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about/">About Blueprint</a></li>
+        <li><a href="#">Our Approach</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Resources</div>
+      <ul class="footer-links">
+        <li><a href="https://investor.blueprintcollaborative.org/help-center">Docs</a></li>
+        <li><a href="#">Movement Finance 101</a></li>
+        <li><a href="#">Capital Spectrum Guide</a></li>
+        <li><a href="#">Security &amp; Privacy</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Blueprint Collaborative. All rights reserved.</div>
+    <div class="footer-indigenous">Built on Xučyun — unceded Lisjan Ohlone land.</div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script>
+  const form = document.getElementById('request-form');
+  const formWrap = document.getElementById('request-form-wrap');
+  const successPanel = document.getElementById('form-success');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('field-name').value.trim();
+    const email = document.getElementById('field-email').value.trim();
+    const type = document.getElementById('field-type').value;
+
+    if (!name || !email || !type) {
+      const missing = [];
+      if (!name) missing.push('full name');
+      if (!email) missing.push('email');
+      if (!type) missing.push('role');
+      alert('Please fill in your ' + missing.join(', ') + '.');
+      return;
+    }
+
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    formWrap.style.opacity = '0';
+    formWrap.style.transition = 'opacity 0.3s ease';
+    setTimeout(function() {
+      formWrap.style.display = 'none';
+      successPanel.classList.add('visible');
+      successPanel.style.opacity = '0';
+      successPanel.style.transition = 'opacity 0.4s ease';
+      requestAnimationFrame(function() {
+        successPanel.style.opacity = '1';
+      });
+    }, 300);
+  });
+</script>
+</body>
+</html>
