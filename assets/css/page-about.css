@@ -80,7 +80,7 @@
     object-position: center center;
   }
   .about-story-visual--mission {
-    background: #04122e;
+    background: #e8f0ff;
   }
   .about-story-visual--mission .hero-network-svg {
     display: block;
@@ -88,6 +88,10 @@
     height: 100%;
     position: absolute;
     inset: 0;
+  }
+  .about-story-visual--mission .hero-network-svg text {
+    fill: #04122e !important;
+    fill-opacity: 0.82 !important;
   }
   .team-stack {
     display: grid;

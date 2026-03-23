@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn More Request — Blueprint Collaborative</title>
+<link rel="icon" type="image/png" href="/assets/images/favicon-blueprint.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Instrument+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/page-request-access.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="request-hero">
+  <div class="request-hero-inner">
+    <div class="request-eyebrow">Live opportunities</div>
+    <h1 class="request-headline">Tell us a bit about<br><em>where you're coming from.</em></h1>
+    <p class="request-sub">You expressed interest in <strong id="interest-label"></strong>. We review every request and follow up within a few business days.</p>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="form-card">
+
+    <div id="request-form-wrap">
+      <form id="request-form" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="field-name">Full name <span>*</span></label>
+            <input class="form-input" type="text" id="field-name" name="name" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-email">Email <span>*</span></label>
+            <input class="form-input" type="email" id="field-email" name="email" placeholder="you@organization.org" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="field-org">Organization name</label>
+          <input class="form-input" type="text" id="field-org" name="organization" placeholder="Your organization" autocomplete="organization">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="field-type">I am a <span>*</span></label>
+          <select class="form-select" id="field-type" name="org_type" required>
+            <option value="" disabled selected>Select your role</option>
+            <option value="Fund Manager">Fund Manager</option>
+            <option value="Advisor">Advisor</option>
+            <option value="Investor or Foundation">Investor or Foundation</option>
+            <option value="DAF provider">DAF provider</option>
+            <option value="Community Steward">Community Steward</option>
+            <option value="Ecosystem Builder">Ecosystem Builder</option>
+          </select>
+        </div>
+
+        <hr class="form-divider">
+
+        <button type="submit" class="form-submit">Send request</button>
+        <p class="form-note">We typically respond within 2–3 business days.</p>
+
+      </form>
+    </div>
+
+    <div class="form-success" id="form-success">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">Request received.</h2>
+      <p class="success-body">Thanks for reaching out. We'll review your request and be in touch within a few business days.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand"><img src="/assets/images/blueprint-logo.png" alt="Blueprint" height="48" style="display:block;margin-bottom:4px;"></div>
+      <p class="footer-tagline">Integrated capital for movement finance. Built on community ownership, transparent capital, and the new economy.</p>
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.06em;color:rgba(4,18,46,0.3);">
+        Equimpa Inc. DBA Blueprint Collaborative
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="/request-access/">Request access</a></li>
+        <li><a href="https://investor.blueprintcollaborative.org/organizations">Log in</a></li>
+        <li><a href="/about/">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Who we serve</div>
+      <ul class="footer-links">
+        <li><a href="/investors/">Capital Stewards</a></li>
+        <li><a href="/fund-managers/">Fund Managers</a></li>
+        <li><a href="/community-stewards/">Community Stewards</a></li>
+        <li><a href="/ecosystem-builders/">Ecosystem Builders</a></li>
+        <li><a href="/advisors/">Advisors</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Resources</div>
+      <ul class="footer-links">
+        <li><a href="/capital-spectrum-guide/">Capital Spectrum Guide</a></li>
+        <li><a href="/security-privacy/">Security &amp; Privacy</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Blueprint Collaborative. All rights reserved.</div>
+    <div class="footer-indigenous">Built on Xučyun — unceded Lisjan Ohlone land.</div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgblCdyu53e_r6niJ6a1oCVd43rea6yzScga0N_AY-IsKIubdm8VieoH0wEXMbP6aO/exec';
+  const CONTEXT_KEY = 'blueprintLiveOpportunityContext';
+  const CONTEXT_MAX_AGE_MS = 15 * 60 * 1000;
+  const OPPORTUNITY_LABELS = {
+    'liberated-futures-fund': 'Liberated Futures Fund',
+    'community-wealth-fund-i': 'Community Wealth Fund I',
+    'ikiam-ecological-reserve': 'IKIAM Ecological Reserve',
+    'hlf-community-investment-portfolio': 'HLF Community Investment Portfolio',
+    'psef-revolving-loan-fund': 'PSEF Revolving Loan Fund',
+    'live-opportunities-general': 'Live opportunities general learn more'
+  };
+
+  function readStoredContext() {
+    try {
+      const raw = localStorage.getItem(CONTEXT_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const fromParam = params.get('from');
+  const opportunityParam = params.get('opportunity');
+  const opportunityLabel = OPPORTUNITY_LABELS[opportunityParam];
+  const storedContext = readStoredContext();
+
+  const hasValidStoredContext = storedContext &&
+    storedContext.source === 'live-opportunities' &&
+    storedContext.opportunity === opportunityParam &&
+    typeof storedContext.ts === 'number' &&
+    (Date.now() - storedContext.ts) <= CONTEXT_MAX_AGE_MS;
+
+  if (fromParam !== 'live-opportunities' || !opportunityLabel || !hasValidStoredContext) {
+    window.location.replace('/');
+  } else {
+    document.getElementById('interest-label').textContent = opportunityLabel;
+
+    const form = document.getElementById('request-form');
+    const formWrap = document.getElementById('request-form-wrap');
+    const successPanel = document.getElementById('form-success');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('field-name').value.trim();
+      const email = document.getElementById('field-email').value.trim();
+      const type = document.getElementById('field-type').value;
+
+      if (!name || !email || !type) {
+        const missing = [];
+        if (!name) missing.push('full name');
+        if (!email) missing.push('email');
+        if (!type) missing.push('role');
+        alert('Please fill in your ' + missing.join(', ') + '.');
+        return;
+      }
+
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      const data = {
+        name: name,
+        email: email,
+        organization: document.getElementById('field-org').value.trim(),
+        role: type,
+        notes: 'Expressed interest in ' + opportunityLabel,
+        source: 'Blueprint Landing Page'
+      };
+
+      try {
+        const payload = JSON.stringify(data);
+        let sent = false;
+
+        if (navigator.sendBeacon) {
+          const blob = new Blob([payload], { type: 'text/plain;charset=UTF-8' });
+          sent = navigator.sendBeacon(SCRIPT_URL, blob);
+          console.info('[Live Opportunity Request] sendBeacon attempted', { sent: sent });
+        }
+
+        if (!sent) {
+          await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: payload,
+            keepalive: true
+          });
+          sent = true;
+          console.info('[Live Opportunity Request] no-cors fetch sent');
+        }
+
+        if (!sent) {
+          throw new Error('Browser rejected submission transport');
+        }
+      } catch (err) {
+        console.error('[Live Opportunity Request] Submit failed', err);
+        alert('We could not send your request right now. Please try again in a minute.');
+        submitBtn.textContent = 'Send request';
+        submitBtn.disabled = false;
+        return;
+      }
+
+      formWrap.style.opacity = '0';
+      formWrap.style.transition = 'opacity 0.3s ease';
+      setTimeout(function() {
+        formWrap.style.display = 'none';
+        successPanel.classList.add('visible');
+        successPanel.style.opacity = '0';
+        successPanel.style.transition = 'opacity 0.4s ease';
+        requestAnimationFrame(function() {
+          successPanel.style.opacity = '1';
+        });
+      }, 300);
+    });
+  }
+</script>
+</body>
+</html>

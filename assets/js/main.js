@@ -19,6 +19,17 @@ var NAV_HTML = `<nav>
         <a href="/ecosystem-builders/"><span class="dd-title">Ecosystem Builders</span><span class="dd-sub">Networks, Coalitions &amp; Advocacy Orgs</span></a>
       </div>
     </li>
+    <li>
+      <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-resources')">
+        Resources
+        <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg>
+      </button>
+      <div class="nav-dropdown" id="dd-resources">
+        <a href="/capital-spectrum-guide/"><span class="dd-title">Capital Spectrum Guide</span><span class="dd-sub">Explore the framework</span></a>
+        <a href="/security-privacy/"><span class="dd-title">Security &amp; Privacy</span><span class="dd-sub">Our trust and data practices</span></a>
+        <a href="/contact/"><span class="dd-title">Contact</span><span class="dd-sub">Get in touch with our team</span></a>
+      </div>
+    </li>
     <li><a href="/about/">About</a></li>
   </ul>
   <div class="nav-actions">
