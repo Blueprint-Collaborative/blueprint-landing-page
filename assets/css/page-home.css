@@ -1186,7 +1186,7 @@
 
   .partner-item img {
     display: block;
-    max-height: 40px;
+    max-height: 48px;
     width: auto;
     object-fit: contain;
   }
