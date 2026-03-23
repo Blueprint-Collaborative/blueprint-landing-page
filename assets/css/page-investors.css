@@ -50,7 +50,7 @@
   .how-header { text-align: center; margin-bottom: 56px; }
   .how-header .section-label { display: inline-block; }
   .how-header .section-title { margin-bottom: 0; }
-  .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid rgba(4,18,46,0.08); }
+  .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(4,18,46,0.08); max-width: 960px; margin: 0 auto; }
   .how-step { padding: 36px 28px; border-right: 1px solid rgba(4,18,46,0.08); }
   .how-step:last-child { border-right: none; }
   .how-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(7,58,160,0.35); margin-bottom: 16px; display: block; }
@@ -132,7 +132,7 @@
     .how-steps { grid-template-columns: repeat(3, 1fr); }
     .how-step:nth-child(3) { border-right: none; }
     .how-step:nth-child(4) { border-top: 1px solid rgba(4,18,46,0.08); }
-    .how-step:nth-child(5) { border-top: 1px solid rgba(4,18,46,0.08); border-right: none; }
+    .how-step:nth-child(4) { border-right: none; }
     .features-grid, .get-grid { grid-template-columns: 1fr; max-width: none; }
     .features-grid .feature-card:nth-child(n),
     .get-grid .get-card:nth-child(n) { grid-column: span 1; }

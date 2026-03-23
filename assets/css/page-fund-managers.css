@@ -62,10 +62,10 @@ section { padding: 100px 48px; }
 .members-header .section-label { justify-content: center; }
 .members-body { margin: 0 auto; }
 .members-callout { background: var(--white); border: 1px solid rgba(7,58,160,0.12); border-radius: 18px; overflow: hidden; max-width: 980px; margin: 0 auto; box-shadow: 0 12px 28px rgba(4,18,46,0.04); }
-.free-copy { max-width: none; padding: 36px 40px 34px; }
+.free-copy { max-width: none; padding: 36px 40px 34px; text-align: center; }
 .members-kicker { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(7,58,160,0.72); margin-bottom: 12px; }
-.members-callout-title { font-family: var(--font-serif); font-size: 32px; font-weight: 600; line-height: 1.12; color: var(--soil); margin-bottom: 16px; max-width: 760px; }
-.members-callout-body { font-size: 15px; font-weight: 300; line-height: 1.75; color: rgba(4,18,46,0.62); max-width: 720px; }
+.members-callout-title { font-family: var(--font-serif); font-size: 32px; font-weight: 600; line-height: 1.12; color: var(--soil); margin-bottom: 16px; max-width: 760px; margin-left: auto; margin-right: auto; }
+.members-callout-body { font-size: 15px; font-weight: 300; line-height: 1.75; color: rgba(4,18,46,0.62); max-width: 720px; margin-left: auto; margin-right: auto; }
 .free-includes { margin-top: 30px; padding: 28px 40px 34px; border-top: 1px solid rgba(7,58,160,0.08); background: transparent; }
 .free-list-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(18,104,67,0.9); margin-bottom: 18px; }
 .free-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
