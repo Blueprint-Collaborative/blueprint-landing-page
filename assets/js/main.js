@@ -1,6 +1,12 @@
 var NAV_HTML = `<nav>
   <a href="/" class="nav-logo"><img src="/assets/images/blueprint-logo.png" alt="Blueprint" height="40" style="display:block;"></a>
   <ul class="nav-links">
+    <li class="mobile-nav-back-item">
+      <button class="mobile-nav-back-btn" onclick="mobileSubmenuBack()">
+        <span class="mobile-nav-back-arrow" aria-hidden="true">&larr;</span>
+        <span>Back</span>
+      </button>
+    </li>
     <li>
       <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-serve')">
         Who we serve
@@ -31,10 +37,14 @@ var NAV_HTML = `<nav>
       </div>
     </li>
     <li><a href="/about/">About</a></li>
+    <li class="mobile-nav-footer">
+      <a href="https://investor.blueprintcollaborative.org/organizations" class="mobile-nav-login-link">Log in</a>
+      <a href="/request-access/" class="mobile-nav-cta">Request access</a>
+    </li>
   </ul>
   <div class="nav-actions">
-    <a href="https://investor.blueprintcollaborative.org/organizations" class="btn-ghost">Log in</a>
-    <a href="/request-access/" class="btn-primary">Request access</a>
+    <a href="https://investor.blueprintcollaborative.org/organizations" class="btn-ghost nav-login-desktop">Log in</a>
+    <a href="/request-access/" class="btn-primary nav-request-desktop">Request access</a>
     <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav()">
       <span></span><span></span><span></span>
     </button>
@@ -54,9 +64,42 @@ var NAV_HTML = `<nav>
     });
   }
 
+  function clearMobileSubmenu() {
+    var links = document.querySelector('.nav-links');
+    if (!links) return;
+    links.classList.remove('mobile-submenu-active');
+    links.querySelectorAll('li.submenu-active').forEach(function (item) {
+      item.classList.remove('submenu-active');
+    });
+    closeAllDropdowns();
+  }
+
+  function isMobileMenuOpen() {
+    var links = document.querySelector('.nav-links');
+    return window.innerWidth <= 1024 && links && links.classList.contains('mobile-open');
+  }
+
   function toggleDropdown(id) {
     var target = document.getElementById(id);
     if (!target) return;
+
+    if (isMobileMenuOpen()) {
+      var links = document.querySelector('.nav-links');
+      var item = target.closest('li');
+      if (!links || !item) return;
+
+      closeAllDropdowns();
+      links.classList.add('mobile-submenu-active');
+      links.querySelectorAll('li.submenu-active').forEach(function (activeItem) {
+        activeItem.classList.remove('submenu-active');
+      });
+      item.classList.add('submenu-active');
+      target.classList.add('open');
+      if (target.previousElementSibling) {
+        target.previousElementSibling.classList.add('open');
+      }
+      return;
+    }
 
     var isOpen = target.classList.contains('open');
     closeAllDropdowns();
@@ -69,6 +112,10 @@ var NAV_HTML = `<nav>
     }
   }
 
+  function mobileSubmenuBack() {
+    clearMobileSubmenu();
+  }
+
   function toggleMobileNav() {
     var links = document.querySelector('.nav-links');
     var btn = document.getElementById('nav-hamburger');
@@ -78,10 +125,12 @@ var NAV_HTML = `<nav>
     links.classList.toggle('mobile-open', !isOpen);
     btn.classList.toggle('open', !isOpen);
     btn.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+    if (isOpen) clearMobileSubmenu();
   }
 
   window.toggleDropdown = toggleDropdown;
   window.toggleMobileNav = toggleMobileNav;
+  window.mobileSubmenuBack = mobileSubmenuBack;
 
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.nav-links li')) {
@@ -95,6 +144,7 @@ var NAV_HTML = `<nav>
       var btn = document.getElementById('nav-hamburger');
       if (links) links.classList.remove('mobile-open');
       if (btn) btn.classList.remove('open');
+      clearMobileSubmenu();
     }
   });
 
@@ -104,6 +154,7 @@ var NAV_HTML = `<nav>
       var btn = document.getElementById('nav-hamburger');
       if (links) links.classList.remove('mobile-open');
       if (btn) btn.classList.remove('open');
+      clearMobileSubmenu();
     }
   });
 })();

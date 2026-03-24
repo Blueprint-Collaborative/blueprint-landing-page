@@ -54,6 +54,15 @@
         <button class="who-tab" data-tab="3" data-long="Community Stewards" data-short="Communities">Community Stewards</button>
         <button class="who-tab" data-tab="4" data-long="Ecosystem Builders" data-short="Networks">Ecosystem Builders</button>
       </div>
+      <div class="who-tabs-select-wrap">
+        <select id="who-mobile-select" class="who-tabs-select" aria-label="Who it's for">
+          <option value="0">Capital Stewards</option>
+          <option value="1">Advisors</option>
+          <option value="2">Fund Managers</option>
+          <option value="3">Community Stewards</option>
+          <option value="4">Ecosystem Builders</option>
+        </select>
+      </div>
 
       <div class="who-panels">
         <div class="who-panel active" data-panel="0">
@@ -469,6 +478,7 @@
   (function () {
     const tabs   = document.querySelectorAll('.who-tab');
     const panels = document.querySelectorAll('.who-panel');
+    const mobileSelect = document.getElementById('who-mobile-select');
     const img      = document.getElementById('who-img');
     const quote    = document.getElementById('who-quote');
     const headline = document.getElementById('who-headline');
@@ -499,13 +509,21 @@
     }
 
     function switchTab(idx) {
-      if (idx === current) return;
+      if (idx === current) {
+        if (mobileSelect && mobileSelect.value !== String(idx)) {
+          mobileSelect.value = String(idx);
+        }
+        return;
+      }
       tabs[current].classList.remove('active');
       panels[current].classList.remove('active');
 
       current = idx;
       tabs[current].classList.add('active');
       panels[current].classList.add('active');
+      if (mobileSelect) {
+        mobileSelect.value = String(idx);
+      }
 
       headline.textContent = data[idx].title;
 
@@ -524,6 +542,15 @@
       compactLabelsMq.addEventListener('change', syncTabLabels);
     } else {
       compactLabelsMq.addListener(syncTabLabels);
+    }
+
+    if (mobileSelect) {
+      mobileSelect.value = String(current);
+      mobileSelect.addEventListener('change', function (e) {
+        const idx = Number(e.target.value);
+        if (Number.isNaN(idx)) return;
+        switchTab(idx);
+      });
     }
 
     tabs.forEach((tab, i) => tab.addEventListener('click', () => switchTab(i)));

@@ -57,7 +57,7 @@ section { padding: 100px 48px; }
 .why-bullet-text { font-size: 14px; font-weight: 300; color: rgba(4, 18, 46, 0.7); }
 
 /* CTA */
-.cta-section { background: var(--mist); text-align: center; border-top: 1px solid rgba(4, 18, 46, 0.07); padding: 120px 48px; position: relative; overflow: hidden; }
+.cta-section { background: var(--mist); text-align: center; border-top: 1px solid rgba(4, 18, 46, 0.07); padding: 60px 48px 120px; position: relative; overflow: hidden; }
 .cta-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
 .cta-inner .section-label { justify-content: center; }
 .cta-inner .section-title { color: var(--soil); max-width: none; }
@@ -103,6 +103,10 @@ footer { background: var(--white); border-top: 1px solid rgba(4, 18, 46, 0.08); 
   .hero-image { height: 70vw; }
   section { padding: 72px 24px; }
   .hero-ctas { flex-direction: column; }
+  .how-steps { grid-template-columns: 1fr; }
+  .how-step { border-right: none; border-top: 1px solid rgba(4, 18, 46, 0.08); }
+  .how-step:first-child { border-top: none; }
+  .btn-hero-primary, .btn-hero-ghost { border-radius: 7px; }
   .footer-top { grid-template-columns: 1fr; padding: 48px 24px; }
   .footer-bottom { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
 }

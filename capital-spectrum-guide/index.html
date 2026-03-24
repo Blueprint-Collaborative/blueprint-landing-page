@@ -190,7 +190,7 @@
       <h2 class="section-title">A continuum, not<br><em>a set of boxes.</em></h2>
     </div>
     <div class="spectrum-bar-wrap">
-      <svg class="spectrum-bar-svg" viewBox="0 0 1080 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Capital spectrum from Grant to Equity">
+      <svg class="spectrum-bar-svg" viewBox="0 0 1080 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Capital spectrum from Grant to Equity">
         <defs>
           <linearGradient id="spectrum-grad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%"   stop-color="#00d4ff"/>
@@ -200,25 +200,66 @@
           </linearGradient>
         </defs>
         <!-- Bar -->
-        <rect x="40" y="44" width="1000" height="10" rx="5" fill="url(#spectrum-grad)"/>
+        <rect x="40" y="64" width="1000" height="14" rx="7" fill="url(#spectrum-grad)"/>
         <!-- Dots -->
-        <circle cx="40"   cy="49" r="7" fill="#00d4ff"/>
-        <circle cx="373"  cy="49" r="7" fill="#10b981"/>
-        <circle cx="707"  cy="49" r="7" fill="#f59e0b"/>
-        <circle cx="1040" cy="49" r="7" fill="#8b5cf6"/>
+        <circle cx="40"   cy="71" r="9" fill="#00d4ff"/>
+        <circle cx="373"  cy="71" r="9" fill="#10b981"/>
+        <circle cx="707"  cy="71" r="9" fill="#f59e0b"/>
+        <circle cx="1040" cy="71" r="9" fill="#8b5cf6"/>
         <!-- Labels -->
-        <text x="40"   y="80" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#0b5f87">GRANT</text>
-        <text x="373"  y="80" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#0f7a59">RECOVERABLE</text>
-        <text x="373"  y="96" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#0f7a59">GRANT</text>
-        <text x="707"  y="80" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#9a5d00">LOAN</text>
-        <text x="1040" y="80" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#5f36b3">EQUITY</text>
+        <text x="40"   y="118" text-anchor="middle" font-family="'DM Mono', monospace" font-size="13" letter-spacing="0.06em" fill="#0b5f87">GRANT</text>
+        <text x="373"  y="118" text-anchor="middle" font-family="'DM Mono', monospace" font-size="13" letter-spacing="0.06em" fill="#0f7a59">RECOVERABLE</text>
+        <text x="373"  y="136" text-anchor="middle" font-family="'DM Mono', monospace" font-size="13" letter-spacing="0.06em" fill="#0f7a59">GRANT</text>
+        <text x="707"  y="118" text-anchor="middle" font-family="'DM Mono', monospace" font-size="13" letter-spacing="0.06em" fill="#9a5d00">LOAN</text>
+        <text x="1040" y="118" text-anchor="middle" font-family="'DM Mono', monospace" font-size="13" letter-spacing="0.06em" fill="#5f36b3">EQUITY</text>
         <!-- Return expectation labels at top -->
-        <text x="40"   y="30" text-anchor="middle" font-family="'DM Mono', monospace" font-size="9" letter-spacing="0.08em" fill="#0b5f87" fill-opacity="0.85">NO RETURN</text>
-        <text x="373"  y="30" text-anchor="middle" font-family="'DM Mono', monospace" font-size="9" letter-spacing="0.08em" fill="#0f7a59" fill-opacity="0.85">CONDITIONAL</text>
-        <text x="707"  y="30" text-anchor="middle" font-family="'DM Mono', monospace" font-size="9" letter-spacing="0.08em" fill="#9a5d00" fill-opacity="0.85">FIXED</text>
-        <text x="1040" y="30" text-anchor="middle" font-family="'DM Mono', monospace" font-size="9" letter-spacing="0.08em" fill="#5f36b3" fill-opacity="0.85">VARIABLE</text>
+        <text x="40"   y="40" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.08em" fill="#0b5f87" fill-opacity="0.9">NO RETURN</text>
+        <text x="373"  y="40" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.08em" fill="#0f7a59" fill-opacity="0.9">CONDITIONAL</text>
+        <text x="707"  y="40" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.08em" fill="#9a5d00" fill-opacity="0.9">FIXED</text>
+        <text x="1040" y="40" text-anchor="middle" font-family="'DM Mono', monospace" font-size="11" letter-spacing="0.08em" fill="#5f36b3" fill-opacity="0.9">VARIABLE</text>
       </svg>
     </div>
+
+    <!-- Mobile vertical timeline: one continuous gradient spine + dots (hidden on desktop) -->
+    <div class="spectrum-vertical" aria-hidden="true">
+      <div class="spectrum-v-inner">
+        <div class="spectrum-v-spine" aria-hidden="true"></div>
+
+        <div class="spectrum-v-step">
+          <div class="spectrum-v-dot spectrum-v-dot--grant"></div>
+          <div class="spectrum-v-content">
+            <div class="spectrum-v-label">No return</div>
+            <div class="spectrum-v-name">Grant</div>
+          </div>
+        </div>
+
+        <div class="spectrum-v-step">
+          <div class="spectrum-v-dot spectrum-v-dot--rec"></div>
+          <div class="spectrum-v-content">
+            <div class="spectrum-v-label">Conditional return</div>
+            <div class="spectrum-v-name">Recoverable Grant</div>
+          </div>
+        </div>
+
+        <div class="spectrum-v-step">
+          <div class="spectrum-v-dot spectrum-v-dot--loan"></div>
+          <div class="spectrum-v-content">
+            <div class="spectrum-v-label">Fixed return</div>
+            <div class="spectrum-v-name">Loan</div>
+          </div>
+        </div>
+
+        <div class="spectrum-v-step">
+          <div class="spectrum-v-dot spectrum-v-dot--equity"></div>
+          <div class="spectrum-v-content">
+            <div class="spectrum-v-label">Variable return</div>
+            <div class="spectrum-v-name">Equity</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <p class="spectrum-caption">Capital types exist on a continuum — and can be blended.</p>
     <p class="spectrum-note">In practice, many community organizations need a blend. A land trust might use a grant for operating costs, a recoverable grant for pre-development, and a loan to close the acquisition. Blueprint helps funders and organizations coordinate across the full range so that no capital type has to do a job it wasn't designed for.</p>
   </div>

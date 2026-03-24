@@ -61,6 +61,35 @@
   line-height: 1.4;
 }
 
+@media (max-width: 640px) {
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 28px;
+    padding-top: 18px;
+  }
+  .hero-stat {
+    margin-right: 0;
+    padding-right: 0;
+    padding-bottom: 14px;
+    border-right: none;
+    border-bottom: 1px solid rgba(4,18,46,0.1);
+  }
+  .hero-stat:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .hero-stat-num {
+    font-size: 34px;
+    margin-bottom: 6px;
+  }
+  .hero-stat-label {
+    font-size: 10px;
+    line-height: 1.45;
+  }
+}
+
 /* ── Members section — network effects reframe ── */
 .members-kicker {
   font-family: 'DM Mono', monospace;

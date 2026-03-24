@@ -186,52 +186,6 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  nav {
-    padding: 0 24px;
-  }
-  .nav-links {
-    display: none;
-  }
-  .nav-hamburger {
-    display: flex;
-  }
-  .nav-links.mobile-open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #04122e;
-    padding: 16px 0 24px;
-    border-bottom: 1px solid rgba(0,201,255,0.12);
-    z-index: 99;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
-    align-items: stretch;
-    gap: 0;
-  }
-  .nav-links.mobile-open > li > a,
-  .nav-links.mobile-open .nav-dropdown-trigger {
-    color: rgba(200,222,255,0.85);
-    padding: 12px 24px;
-    font-size: 14px;
-    border-radius: 0;
-    width: 100%;
-    text-align: left;
-  }
-  .nav-links.mobile-open .nav-dropdown {
-    position: static;
-    display: none;
-    background: rgba(255,255,255,0.04);
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 4px 0;
-  }
-  .nav-links.mobile-open .nav-dropdown.open {
-    display: block;
-  }
-
   .sp-banner {
     padding: 118px 24px 56px;
   }

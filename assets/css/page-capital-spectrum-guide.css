@@ -352,7 +352,7 @@ section { padding: 100px 48px; }
   background: var(--white);
   text-align: center;
   border-top: 1px solid rgba(4,18,46,0.07);
-  padding: 120px 48px;
+  padding: 60px 48px 120px;
   position: relative;
   overflow: hidden;
 }
@@ -412,6 +412,9 @@ footer { background: var(--mist); border-top: 1px solid rgba(4,18,46,0.07); }
 .footer-copy { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: rgba(4,18,46,0.3); }
 .footer-indigenous { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em; color: rgba(4,18,46,0.25); }
 
+/* Mobile vertical timeline — hidden on desktop */
+.spectrum-vertical { display: none; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .capital-cards-grid { grid-template-columns: repeat(2, 1fr); }
@@ -423,6 +426,75 @@ footer { background: var(--mist); border-top: 1px solid rgba(4,18,46,0.07); }
   .csg-hero { padding: 120px 24px 72px; }
   section { padding: 72px 24px; }
   .capital-cards-grid { grid-template-columns: 1fr; }
+  .spectrum-header { margin-bottom: 28px; }
+  .spectrum-bar-wrap { display: none; }
+  .spectrum-vertical {
+    display: block;
+    margin: 0 0 8px;
+  }
+  /* One continuous gradient spine; dots sit centered on the rail (no segment gaps) */
+  .spectrum-v-inner {
+    position: relative;
+  }
+  .spectrum-v-spine {
+    position: absolute;
+    left: 10.5px; /* centers 3px line in 24px dot column */
+    top: 9px;
+    bottom: 9px;
+    width: 3px;
+    border-radius: 2px;
+    background: linear-gradient(
+      to bottom,
+      #00d4ff 0%,
+      #10b981 33%,
+      #f59e0b 66%,
+      #8b5cf6 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+  .spectrum-v-step {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    column-gap: 16px;
+    align-items: start;
+    padding-bottom: 28px;
+  }
+  .spectrum-v-step:last-child {
+    padding-bottom: 0;
+  }
+  .spectrum-v-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    justify-self: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 0 3px var(--white);
+  }
+  .spectrum-v-dot--grant  { background: #00d4ff; }
+  .spectrum-v-dot--rec    { background: #10b981; }
+  .spectrum-v-dot--loan   { background: #f59e0b; }
+  .spectrum-v-dot--equity { background: #8b5cf6; }
+  .spectrum-v-content { padding-top: 2px; min-width: 0; }
+  .spectrum-v-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(4,18,46,0.45);
+    margin-bottom: 4px;
+  }
+  .spectrum-v-name {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--soil);
+  }
+  .spectrum-caption { margin-top: 12px; font-size: 16px; }
+  .spectrum-note { margin-top: 28px; font-size: 15px; line-height: 1.7; }
   .footer-top { grid-template-columns: 1fr; padding: 48px 24px; }
   .footer-bottom { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
   .cta-buttons { flex-direction: column; align-items: center; }

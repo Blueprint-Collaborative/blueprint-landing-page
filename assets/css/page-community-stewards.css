@@ -52,7 +52,7 @@ section { padding: 100px 48px; }
 .how-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--soil); margin-bottom: 10px; line-height: 1.25; }
 .how-desc { font-size: 13.5px; line-height: 1.65; color: rgba(4,18,46,0.5); font-weight: 300; }
 
-.cta-section { background: var(--mist); text-align: center; border-top: 1px solid rgba(4,18,46,0.07); padding: 120px 48px; position: relative; overflow: hidden; }
+.cta-section { background: var(--mist); text-align: center; border-top: 1px solid rgba(4,18,46,0.07); padding: 60px 48px 120px; position: relative; overflow: hidden; }
 .cta-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
 .cta-inner .section-label { justify-content: center; }
 .cta-inner .section-title { color: var(--soil); max-width: none; }
@@ -97,6 +97,7 @@ footer { background: var(--white); border-top: 1px solid rgba(4,18,46,0.08); }
   .hero-image img { object-position: center 58%; }
   section { padding: 72px 24px; }
   .hero-ctas { flex-direction: column; }
+  .btn-hero-primary, .btn-hero-ghost { border-radius: 7px; }
   .how-steps { grid-template-columns: 1fr; }
   .how-step { border-right: none; border-top: 1px solid rgba(4,18,46,0.08); }
   .how-step:first-child { border-top: none; }
