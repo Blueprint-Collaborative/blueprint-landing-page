@@ -15,8 +15,8 @@ var NAV_HTML = `<nav>
       <div class="nav-dropdown" id="dd-serve">
         <div class="nav-dropdown-label">Capital Stewards</div>
         <a href="/investors/"><span class="dd-title">Investors &amp; Foundations</span><span class="dd-sub">DAFs, family offices, individual investors</span></a>
-        <a href="/fund-managers/"><span class="dd-title">Fund Managers</span><span class="dd-sub">Impact funds &amp; movement finance vehicles</span></a>
         <a href="/advisors/"><span class="dd-title">Advisors</span><span class="dd-sub">RIA's &amp; impact advisors</span></a>
+        <a href="/fund-managers/"><span class="dd-title">Fund Managers</span><span class="dd-sub">Impact funds &amp; movement finance vehicles</span></a>
         <hr>
         <div class="nav-dropdown-label">Community</div>
         <a href="/community-stewards/"><span class="dd-title">Community Stewards</span><span class="dd-sub">Nonprofits, cooperatives &amp; CDFIs</span></a>
