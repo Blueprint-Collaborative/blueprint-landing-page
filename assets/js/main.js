@@ -158,3 +158,72 @@ var NAV_HTML = `<nav>
     }
   });
 })();
+
+(function () {
+  var GA_MEASUREMENT_ID = 'G-LTHD0H59PY';
+  var ctaSelector = [
+    '.btn-primary',
+    '.btn-hero-primary',
+    '.btn-hero-ghost',
+    '.mobile-nav-cta',
+    '.mobile-nav-login-link',
+    '.nav-request-desktop',
+    '.nav-login-desktop',
+    '.who-panel-cta',
+    '.fund-link',
+    '.form-submit',
+    'a[href*="/request-access/"]',
+    'a[href*="calendly.com"]',
+    'a[href*="investor.blueprintcollaborative.org"]'
+  ].join(',');
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
+  document.head.appendChild(gaScript);
+
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID);
+
+  function trackEvent(eventName, payload) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, payload);
+  }
+
+  function getCtaName(el) {
+    var fromAttr = el.getAttribute('data-analytics') || el.getAttribute('data-live-opportunity');
+    if (fromAttr) return fromAttr;
+    if (el.id) return el.id;
+    var text = (el.textContent || '').trim().toLowerCase().replace(/\s+/g, '_');
+    if (text) return text.slice(0, 80);
+    return 'unknown_cta';
+  }
+
+  document.addEventListener('click', function (event) {
+    var target = event.target.closest(ctaSelector);
+    if (!target) return;
+
+    trackEvent('cta_click', {
+      cta_name: getCtaName(target),
+      cta_text: (target.textContent || '').trim().slice(0, 120),
+      destination_url: target.getAttribute('href') || '',
+      page_path: window.location.pathname
+    });
+  });
+
+  document.addEventListener('submit', function (event) {
+    var form = event.target;
+    if (!form || !(form instanceof HTMLFormElement)) return;
+
+    trackEvent('form_submit_attempt', {
+      form_id: form.id || 'unknown_form',
+      form_action: form.getAttribute('action') || '',
+      page_path: window.location.pathname
+    });
+  }, true);
+})();
