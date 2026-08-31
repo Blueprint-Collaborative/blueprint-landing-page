@@ -1,0 +1,9 @@
+# GitHub Pages (Jekyll) build settings.
+#
+# Everything in this repository is published at the site root, so server-side
+# source must be kept out of the build. Directories beginning with an
+# underscore are excluded by default; _apps-script is listed here as well so
+# the intent is explicit rather than implied.
+exclude:
+  - _apps-script/
+  - README.md

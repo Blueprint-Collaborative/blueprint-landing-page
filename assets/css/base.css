@@ -105,3 +105,20 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
   min-height: 46px;
   padding: 12px 24px;
 }
+
+/* ── Scroll reveal ──
+   The hidden state is only ever applied by blueprintReveal() in main.js, and
+   only to elements below the fold. Without JavaScript nothing is hidden, so
+   content is visible by default. Motion is skipped entirely for anyone who
+   has asked their system to reduce it. */
+@media (prefers-reduced-motion: no-preference) {
+  .bp-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .bp-reveal.bp-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}

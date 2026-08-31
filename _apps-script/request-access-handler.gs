@@ -1,3 +1,13 @@
+/**
+ * Google Apps Script web-app handler for the Request Access and Contact forms.
+ *
+ * This file is NOT part of the published site. It is kept here for version
+ * control only; the running copy lives in the Apps Script project and is
+ * deployed from there. The leading underscore on this directory keeps it out
+ * of the Jekyll build that GitHub Pages runs, and _config.yml excludes it
+ * explicitly as well.
+ */
+
 function doPost(e) {
   try {
     if (!e || !e.postData || !e.postData.contents) {

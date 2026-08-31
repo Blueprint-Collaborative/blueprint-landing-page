@@ -4,6 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Community Stewards — Blueprint Collaborative</title>
+<meta name="description" content="A complimentary tool for community organizations to share their story, define their capital needs, and connect with funders already looking for them.">
+<link rel="canonical" href="https://www.blueprintcollaborative.org/community-stewards/">
+<link rel="icon" type="image/png" href="/assets/images/favicon-blueprint.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blueprint Collaborative">
+<meta property="og:title" content="For Community Stewards — Blueprint Collaborative">
+<meta property="og:description" content="A complimentary tool for community organizations to share their story, define their capital needs, and connect with funders already looking for them.">
+<meta property="og:url" content="https://www.blueprintcollaborative.org/community-stewards/">
+<meta property="og:image" content="https://www.blueprintcollaborative.org/assets/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Blueprint Collaborative — capital flows where community leads the way">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For Community Stewards — Blueprint Collaborative">
+<meta name="twitter:description" content="A complimentary tool for community organizations to share their story, define their capital needs, and connect with funders already looking for them.">
+<meta name="twitter:image" content="https://www.blueprintcollaborative.org/assets/images/og-card.jpg">
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Instrument+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 
@@ -190,20 +209,8 @@
 
 <script src="/assets/js/main.js"></script>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.feature-card, .how-step, .why-bullet').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(16px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
+  document.addEventListener('DOMContentLoaded', function () {
+    blueprintReveal('.feature-card, .how-step, .why-bullet');
   });
 </script>
 </body>

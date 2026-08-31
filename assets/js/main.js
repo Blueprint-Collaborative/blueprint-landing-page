@@ -229,3 +229,30 @@ var NAV_HTML = `<nav>
     });
   }, true);
 })();
+
+/* Fades elements in as they scroll into view.
+
+   Content is visible by default: this adds the hidden state itself, so a
+   visitor without JavaScript — or with reduced motion requested, or on a
+   browser without IntersectionObserver — simply sees everything. Elements
+   already on screen when this runs are left alone, so nothing flashes in. */
+window.blueprintReveal = function (selector) {
+  var els = document.querySelectorAll(selector);
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('bp-revealed');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1 });
+
+  Array.prototype.forEach.call(els, function (el) {
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    el.classList.add('bp-reveal');
+    observer.observe(el);
+  });
+};
