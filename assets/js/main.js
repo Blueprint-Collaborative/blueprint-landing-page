@@ -1,5 +1,5 @@
 var NAV_HTML = `<nav>
-  <a href="/" class="nav-logo"><img src="/assets/images/blueprint-logo.png" alt="Blueprint" height="40" style="display:block;"></a>
+  <a href="/" class="nav-logo"><img src="/assets/images/blueprint-logo.webp" alt="Blueprint" height="40" style="display:block;"></a>
   <ul class="nav-links">
     <li class="mobile-nav-back-item">
       <button class="mobile-nav-back-btn" onclick="mobileSubmenuBack()">
@@ -175,7 +175,6 @@ var NAV_HTML = `<nav>
     '.fund-link',
     '.form-submit',
     'a[href*="/request-access/"]',
-    'a[href*="calendly.com"]',
     'a[href*="investor.blueprintcollaborative.org"]'
   ].join(',');
 
