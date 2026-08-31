@@ -8,7 +8,7 @@
 .hero-headline { font-family: var(--font-serif); font-size: clamp(48px, 4.5vw, 80px); font-weight: 300; line-height: 1.0; letter-spacing: -0.02em; color: var(--soil); margin-bottom: 28px; }
 .hero-headline em { font-style: italic; color: var(--blue-primary); }
 .hero-sub { font-size: 17px; font-weight: 300; line-height: 1.8; color: rgba(4, 18, 46, 0.55); margin-bottom: 44px; max-width: 460px; }
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 .btn-hero-primary { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); background: var(--blue-primary); border: none; padding: 14px 32px; border-radius: 2px; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
 .btn-hero-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
 .btn-hero-ghost { font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: rgba(4, 18, 46, 0.6); background: none; border: 1px solid rgba(4, 18, 46, 0.2); padding: 14px 28px; border-radius: 2px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
@@ -102,7 +102,7 @@ footer { background: var(--white); border-top: 1px solid rgba(4, 18, 46, 0.08); 
   .hero-content { padding: 48px 24px 64px; }
   .hero-image { height: 70vw; }
   section { padding: 72px 24px; }
-  .hero-ctas { flex-direction: column; }
+  .hero-ctas { flex-direction: column; align-items: center; }
   .how-steps { grid-template-columns: 1fr; }
   .how-step { border-right: none; border-top: 1px solid rgba(4, 18, 46, 0.08); }
   .how-step:first-child { border-top: none; }
