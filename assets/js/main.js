@@ -39,6 +39,7 @@ var NAV_HTML = `<nav>
       </div>
     </li>
     <li><a href="/how-it-works/">How it works</a></li>
+    <li><a href="/convenings/">Convenings</a></li>
     <li><a href="/about/">About</a></li>
     <li class="mobile-nav-footer">
       <a href="https://investor.blueprintcollaborative.org/organizations" class="mobile-nav-login-link">Log in</a>
