@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.blueprintcollaborative.org/sitemap.xml
+Sitemap: https://blueprintcollaborative.org/sitemap.xml
