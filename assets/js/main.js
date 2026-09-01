@@ -33,6 +33,7 @@ var NAV_HTML = `<nav>
       <div class="nav-dropdown" id="dd-resources">
         <a href="/capital-spectrum-guide/"><span class="dd-title">Capital Spectrum Guide</span><span class="dd-sub">Explore the framework</span></a>
         <a href="/thrive-metrics/"><span class="dd-title">Thrive Metrics</span><span class="dd-sub">Community-defined measurement framework</span></a>
+        <a href="/community-wealth-charter/"><span class="dd-title">Community Wealth Charter</span><span class="dd-sub">Ownership written into the cap table</span></a>
         <a href="/security-privacy/"><span class="dd-title">Security &amp; Privacy</span><span class="dd-sub">Our trust and data practices</span></a>
         <a href="/contact/"><span class="dd-title">Contact</span><span class="dd-sub">Get in touch with our team</span></a>
       </div>
