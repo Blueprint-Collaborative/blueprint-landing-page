@@ -180,6 +180,22 @@ var NAV_HTML = `<nav>
     'a[href*="investor.blueprintcollaborative.org"]'
   ].join(',');
 
+  // Only report from the live site, so local and preview visits stay out of GA.
+  var host = window.location.hostname;
+  if (host !== 'blueprintcollaborative.org' && host !== 'www.blueprintcollaborative.org') return;
+
+  // Team flag: visit any page with ?bp_internal=1 once to tag this browser's
+  // traffic as internal (filtered in GA); ?bp_internal=0 clears it.
+  var isInternal = false;
+  try {
+    var internalParam = new URLSearchParams(window.location.search).get('bp_internal');
+    if (internalParam === '1') window.localStorage.setItem('bp_internal', '1');
+    else if (internalParam === '0') window.localStorage.removeItem('bp_internal');
+    isInternal = window.localStorage.getItem('bp_internal') === '1';
+  } catch (e) {
+    // Storage blocked (private mode, disabled cookies): treat as external.
+  }
+
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () {
     window.dataLayer.push(arguments);
@@ -191,7 +207,11 @@ var NAV_HTML = `<nav>
   document.head.appendChild(gaScript);
 
   window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID);
+  if (isInternal) {
+    window.gtag('config', GA_MEASUREMENT_ID, { traffic_type: 'internal' });
+  } else {
+    window.gtag('config', GA_MEASUREMENT_ID);
+  }
 
   function trackEvent(eventName, payload) {
     if (typeof window.gtag !== 'function') return;
