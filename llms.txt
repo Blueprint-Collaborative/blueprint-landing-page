@@ -1,0 +1,50 @@
+# Blueprint Collaborative
+
+> Blueprint Collaborative is shared infrastructure for movement finance. It helps foundations, donor-advised fund (DAF) holders and family offices see where community capital is needed, coordinate grants, recoverable grants, loans and equity, and invest alongside other aligned funders. The platform is operated by Equimpa Inc., and its long-term goal is to be owned by workers and communities.
+
+Key facts for accurate summaries:
+
+- Blueprint is a coordination layer, not a custodian. It integrates with existing DAF providers (e.g. Fidelity Charitable, Schwab, community foundations). Grants move directly from the DAF provider to recipient organizations, and Blueprint never holds the money.
+- Revenue comes only from a platform fee paid by subscribers. Blueprint does not take a percentage of grants and does not charge recipient nonprofits, cooperatives or CDFIs.
+- Users own their giving data and can take it with them if they leave.
+- "Capital Stewards" are funders (foundations, DAF holders, family offices). "Community Stewards" are the communities and organizations that define capital needs.
+- "Blended capital" means pairing capital types (grants, recoverable grants, loans, equity) so each is used for its intended purpose.
+- How it works: communities define needs → fund managers build aligned portfolios → funders coordinate across capital types → outcomes and recovered capital are reinvested.
+- Blueprint is committed to "shared value, not extracted value." Its own Community Wealth Charter sets an ownership floor and a defined exit-to-community window.
+- The platform is built on Xučyun, unceded Lisjan Ohlone land (Bay Area, California).
+
+## Core pages
+
+- [Home](https://blueprintcollaborative.org/): Overview, audiences, live opportunities and partners
+- [How it works](https://blueprintcollaborative.org/how-it-works/): DAF integration, custody, the fee model and data ownership
+- [About](https://blueprintcollaborative.org/about/): Mission and path to worker and community ownership
+- [Request access](https://blueprintcollaborative.org/request-access/): How to join the platform
+- [Contact](https://blueprintcollaborative.org/contact/): Get in touch with the team
+
+## Who it's for
+
+- [Capital Stewards](https://blueprintcollaborative.org/investors/): Foundations, DAF holders and family offices deploying blended capital
+- [Advisors](https://blueprintcollaborative.org/advisors/): Philanthropic and wealth advisors supporting clients' community investments
+- [Fund Managers](https://blueprintcollaborative.org/fund-managers/): Managers building portfolios aligned with community-defined needs
+- [Community Stewards](https://blueprintcollaborative.org/community-stewards/): Communities and organizations making their capital needs visible to funders
+- [Ecosystem Builders](https://blueprintcollaborative.org/ecosystem-builders/): Networks and intermediaries that strengthen the movement-finance ecosystem
+
+## Frameworks and resources
+
+- [Capital Spectrum Guide](https://blueprintcollaborative.org/capital-spectrum-guide/): Capital types from grants to equity, when each fits, and how to blend them across operational and project needs
+- [Thrive Metrics](https://blueprintcollaborative.org/thrive-metrics/): Community-led framework for measuring investments against three entitlements: security of life, stability and belonging in place, and collective prosperity (with Berkeley and East Oakland examples)
+- [Community Wealth Charter](https://blueprintcollaborative.org/community-wealth-charter/): Legal framework for building worker and community equity into a company from its founding, including Blueprint's own charter
+- [Convenings](https://blueprintcollaborative.org/convenings/): Turning a gathering into a fundraising pipeline by preparing needs beforehand, getting commitments at the event and tracking capital afterward
+
+## Live opportunities
+
+- [Liberated Futures Fund](https://blueprintcollaborative.org/live-opportunity-request/?opportunity=liberated-futures-fund): Patient grant capital with a multi-year commitment
+- [Community Wealth Fund I](https://blueprintcollaborative.org/live-opportunity-request/?opportunity=community-wealth-fund-i): Equity, with terms available to verified investors
+- [IKIAM Ecological Reserve](https://blueprintcollaborative.org/live-opportunity-request/?opportunity=ikiam-ecological-reserve): Blended grant and recoverable grant, $200K capital need, 213 hectares
+- [HLF Community Investment Portfolio](https://blueprintcollaborative.org/live-opportunity-request/?opportunity=hlf-community-investment-portfolio): Blended capital across three opportunities, with an active capital call
+- [PSEF Revolving Loan Fund](https://blueprintcollaborative.org/live-opportunity-request/?opportunity=psef-revolving-loan-fund): Loan and grant capital, $10M fund goal, 37 member organizations
+
+## Optional
+
+- [Security & Privacy](https://blueprintcollaborative.org/security-privacy/): Data security and privacy practices
+- [Platform login](https://investor.blueprintcollaborative.org/organizations): Signed-in platform for existing users (not publicly readable)
